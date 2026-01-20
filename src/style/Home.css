@@ -1,7 +1,7 @@
 #mainContainerHome{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
     /* height: 50vh; */
     height: 90%;
@@ -11,6 +11,7 @@
     z-index: 1;
     /* overflow: hidden; */
     position: relative;
+    color: white
     /* opacity: 0.2; */
 
     /* background-color: bisque; */
@@ -23,7 +24,7 @@
     width: 100%;
     position: absolute;
     z-index: -1;
-    background-image: url('./../assets/movieCollage1.jpeg');
+    /* background-image: url('./../assets/movieCollage1.jpeg'); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -44,13 +45,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 40px;
     /* background-color: antiquewhite; */
     /* margin: 20vh; */
+}
+#contentBody{
+    margin: 0;
+    padding: 0;
 }
 #toMovies{
     text-decoration: none;
     color: white;
     padding: 10px;
+}
+#moviesButton{
+    font-size: x-large;
 }
 button{
     padding: 15px 40px;
@@ -65,13 +75,6 @@ button:active{
 h2{
     padding: 0;
     margin: 0;
-}
-h1{
-    padding: 5vh;
-    margin-bottom: 0;
-}
-#contentBody{
-    margin-top: 13vw;
 }
 @media (max-width: 760px){
     #mainContainerHome{

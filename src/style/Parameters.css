@@ -10,6 +10,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 32px;
+    color: white;
+    padding-top: 8vh;
 }
 
 #inputs{
@@ -31,6 +34,7 @@
     padding: 8px;
     border-radius: 21px;
     border: 0;
+    background-color: #f59e0b;
 }
 
 #dropdownLang{
@@ -47,6 +51,12 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.paramTitles{
+    font-size: x-large;
+    font-weight: 600;
+    color: #f59e0b;
 }
 
 #movie{
@@ -68,11 +78,13 @@
     margin: 21px 0;
     margin-left: 25%;
     width: 89%;
+    color: white;
 }
 
 #movieImg{
     display: flex;
-    width: 34%;
+    /* width: 34%; */
+    height: 100%;
     /* background-color: white; */
 }
 
@@ -84,6 +96,7 @@
     justify-content: center;
     align-items: center;
     margin-right: 10%;
+    gap: 8%;
 }
 
 #movieTitle{
@@ -94,7 +107,7 @@
 #movieDesc{
     display: flex;
     flex-wrap: wrap;
-    max-width: 70%;
+    max-width: 100%;
     /* background-color: aliceblue; */
 }
 
@@ -104,6 +117,9 @@ img{
 }
 
 @media (max-width: 760px){
+    #mainContainer{
+        padding-top: 4vh;
+    }
     #movie{
         flex-direction: column;
         /* width: 85%; */

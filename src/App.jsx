@@ -6,6 +6,7 @@ import NavBar from './components/NavBar';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Movie from './components/Movie';
 import Directions from './components/Directions';
+import "../index.css"
 
 
 function App() {

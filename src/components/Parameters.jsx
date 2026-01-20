@@ -3,9 +3,122 @@ import "./../style/Parameters.css";
 import imgTemplate from "./../assets/imgTemplate.png";
 
 function Parameters() {
-    const [list, setList] = useState([]);
+    const [list, setList] = useState([
+        {
+            "id": 28,
+            "name": "Action"
+        },
+        {
+            "id": 12,
+            "name": "Adventure"
+        },
+        {
+            "id": 16,
+            "name": "Animation"
+        },
+        {
+            "id": 35,
+            "name": "Comedy"
+        },
+        {
+            "id": 80,
+            "name": "Crime"
+        },
+        {
+            "id": 99,
+            "name": "Documentary"
+        },
+        {
+            "id": 18,
+            "name": "Drama"
+        },
+        {
+            "id": 10751,
+            "name": "Family"
+        },
+        {
+            "id": 14,
+            "name": "Fantasy"
+        },
+        {
+            "id": 36,
+            "name": "History"
+        },
+        {
+            "id": 27,
+            "name": "Horror"
+        },
+        {
+            "id": 10402,
+            "name": "Music"
+        },
+        {
+            "id": 9648,
+            "name": "Mystery"
+        },
+        {
+            "id": 10749,
+            "name": "Romance"
+        },
+        {
+            "id": 878,
+            "name": "Science Fiction"
+        },
+        {
+            "id": 10770,
+            "name": "TV Movie"
+        },
+        {
+            "id": 53,
+            "name": "Thriller"
+        },
+        {
+            "id": 10752,
+            "name": "War"
+        },
+        {
+            "id": 37,
+            "name": "Western"
+        }
+    ]);
     const [selectedGenres, setSelectedGenres] = useState([]);
-    const [lang, setLang] = useState([]);
+    const [lang, setLang] = useState([
+        {
+            "iso_639_1": "xx",
+            "english_name": "No Language",
+            "name": "No Language"
+        },
+        {
+            "iso_639_1": "te",
+            "english_name": "Telugu",
+            "name": "తెలుగు"
+        },
+        {
+            "iso_639_1": "en",
+            "english_name": "English",
+            "name": "English"
+        },
+        {
+            "iso_639_1": "hi",
+            "english_name": "Hindi",
+            "name": "हिन्दी"
+        },
+        {
+            "iso_639_1": "ta",
+            "english_name": "Tamil",
+            "name": "தமிழ்"
+        },
+        {
+            "iso_639_1": "ml",
+            "english_name": "Malayalam",
+            "name": ""
+        },
+        {
+            "iso_639_1": "kn",
+            "english_name": "Kannada",
+            "name": "?????"
+        },
+    ]);
     const [selectedLang, setSelectedLang] = useState("");
 
     const [content, setContent] = useState(null);
@@ -26,30 +139,30 @@ function Parameters() {
     
 
     //For fetching GENRES & LANGUAGES.
-    useEffect(() => {
-        const fetchData = async() => {
-            const urlG = `${BASE_URL}/genre/movie/list?api_key=${API_KEY}&include_adult=false&include_video=true&language=en`;
-            const urlL = `${BASE_URL}/configuration/languages?api_key=${API_KEY}`;
+    // useEffect(() => {
+    //     const fetchData = async() => {
+    //         const urlG = `${BASE_URL}/genre/movie/list?api_key=${API_KEY}&include_adult=false&include_video=true&language=en`;
+    //         const urlL = `${BASE_URL}/configuration/languages?api_key=${API_KEY}`;
 
-            try {
-                const responseGenre = await fetch(urlG);
-                const dataGenre = await responseGenre.json();
-                const responseLang = await fetch(urlL);
-                const dataLang = await responseLang.json();
+    //         try {
+    //             const responseGenre = await fetch(urlG);
+    //             const dataGenre = await responseGenre.json();
+    //             const responseLang = await fetch(urlL);
+    //             const dataLang = await responseLang.json();
                 
-                setList(dataGenre.genres || []); // Update state only if genres exist
-                setLang(dataLang);
+    //             setList(dataGenre.genres || []); // Update state only if genres exist
+    //             setLang(dataLang);
 
-            } catch (error) {
-                console.error("Error fetching genres:", error);
-                setList([]); // Handle error case
-            }
-        };
+    //         } catch (error) {
+    //             console.error("Error fetching genres:", error);
+    //             setList([]); // Handle error case
+    //         }
+    //     };
 
-        fetchData(); // Call the function inside useEffect
-    }, []);
+    //     fetchData(); // Call the function inside useEffect
+    // }, []);
 
-    //For movies everytime the GENRE/LANGUAGE is changed -> tempMovies.
+    //For getting movies everytime the GENRE/LANGUAGE is changed -> tempMovies.
     useEffect(() => {
         const fetchPageNumbers = async() => {
             const url = `${BASE_URL}/discover/movie?api_key=${API_KEY}&include_adult=false&with_original_language=${selectedLang}&with_genres=${selectedGenres}`;
@@ -222,10 +335,10 @@ function Parameters() {
         // else{
         //     setTest(
         //         <>
-        //             <h1>MODDAGUDU</h1>
+        //             <h1>Muskoni po</h1>
         //             <h4>Ee App chesindhe neeku select cheskovadam radhu ani</h4>
-        //             <h4>Malli ekkadiki vachi puuku panulu cheyyaku</h4>
-        //             <h4>Echina {count} options lo choose cheskoni DENGEY</h4>
+        //             <h4>Malli ekkadiki vachi ave panulu cheyyaku</h4>
+        //             <h4>Echina {count} options lo choose cheskoni PO</h4>
         //         </>
         //     )
         // }
@@ -235,13 +348,16 @@ function Parameters() {
     return (
         <div id="main">
             <div id="mainContainer">
-                <h3>Genres</h3>
+                <div>
+                <div className="paramTitles">Genres</div>
                 <div id="inputs">
                     {list.map(genre => (
-                        <label><input type='checkbox' value={genre.id} id={genre.id} onChange={e => handleCheckboxChange(e)} />{genre.name}</label>
+                        <label><input type='checkbox' value={genre.id} id={genre.id} onChange={e => handleCheckboxChange(e)} /> {genre.name}</label>
                     ))}
                 </div>
-                <h2 id="languages">Language</h2>
+                </div>
+                <div>
+                <div className="paramTitles">Languages</div>
                 <div>
                     <label htmlFor="language"></label>
                     <select name="language" id='dropdownLang' onChange={e => handleDropdown(e)}>
@@ -249,6 +365,7 @@ function Parameters() {
                             <option value={item.iso_639_1}>{item.english_name}</option>
                         ))}
                     </select>
+                </div>
                 </div>
                 <div id="buttonDiv"><button onClick={submitSelection} id="submitButton">Next</button></div>
             </div>

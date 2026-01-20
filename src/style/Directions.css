@@ -1,8 +1,9 @@
 #mainContainerDirections{
     display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: center;
     align-items: left;
+    height: 100%;
     margin: 0;
     border: 0;
     padding: 0;
@@ -10,12 +11,14 @@
 }
 #titleDirections{
     padding: 0;
+    color: #f59e0b;
 }
 #bodyDirections{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: white;
     /* background-color: aqua; */
 }
 .steps{
@@ -27,6 +30,9 @@
 }
 .stepsHeading{
     margin: 1vh 0;
+    color: #f59e0b; 
+    text-align: left;
+    font-weight: 600;
 }
 .stepsDesc{
     text-align: left;

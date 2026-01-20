@@ -34,7 +34,7 @@ function Contact() {
         <div id="mainContainerContact">
             <div id="preface">Got feedback? A movie you love? Or just want to say hi?</div>
             <form ref={form} onSubmit={sendEmail} id="contactForm">
-                <h2>Contact me</h2>
+                <div id="contactFormTitle">CONTACT ME</div>
                 <label>Name</label>
                 <input type="text" name="name" className="textInput" placeholder="John Snow" />
                 <label>Email</label>

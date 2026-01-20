@@ -14,7 +14,7 @@
     margin-top: 11vh;
     height: 60%;
     width: 60%;
-    background-color: rgb(75, 75, 75);
+    background-color: #000;
     border-radius: 20px;
     margin: 0;
     border: 0;
@@ -26,7 +26,7 @@
     padding: 8vh 0 8vh 0;
     margin: 0;
     border: 0;
-
+    color: white;
 }
 #contactSubmit{
     /* width: 150px;
@@ -36,11 +36,12 @@
     margin: 3vh 0;
     border: 0;
     font-size: medium;
-    background-color: black;
+    background-color: #f59e0b;
+    color: white;
 }
 #contactSubmit:active{
     border: 0;
-    background-color:darkolivegreen;
+    background-color:#f6b139;
 }
 
 .textInput{
@@ -67,8 +68,10 @@ label{
     margin-top: 13px;
 }
 
-h2{
-    margin-top: 3vh;
+#contactFormTitle{
+    font-size: xx-large;
+    font-weight: 600;
+    color: #f59e0b;
 }
 
 @media (max-width: 760px){
